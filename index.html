@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Customer Care Pro</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
+}
+
+body{
+background:#f5f9ff;
+overflow-x:hidden;
+}
+
+/* Navbar */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:white;
+position:fixed;
+width:100%;
+top:0;
+z-index:1000;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.logo{
+font-size:28px;
+font-weight:700;
+color:#2563eb;
+}
+
+nav ul{
+display:flex;
+list-style:none;
+gap:30px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:.3s;
+}
+
+nav ul li a:hover{
+color:#2563eb;
+}
+
+.support-btn{
+background:#2563eb;
+color:white;
+padding:12px 25px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+transition:.3s;
+}
+
+.support-btn:hover{
+transform:translateY(-3px);
+}
+
+/* Hero Section */
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:120px 8%;
+background:linear-gradient(135deg,#eef4ff,#dcecff);
+}
+
+.hero-text{
+max-width:600px;
+}
+
+.tag{
+display:inline-block;
+padding:8px 18px;
+background:white;
+border-radius:50px;
+color:#2563eb;
+font-weight:600;
+margin-bottom:20px;
+box-shadow:0 5px 20px rgba(0,0,0,0.08);
+}
+
+.hero h1{
+font-size:70px;
+line-height:1.1;
+color:#111827;
+margin-bottom:20px;
+}
+
+.hero h1 span{
+color:#2563eb;
+}
+
+.hero p{
+font-size:18px;
+color:#666;
+margin-bottom:30px;
+}
+
+.search-box{
+display:flex;
+background:white;
+padding:10px;
+border-radius:60px;
+box-shadow:0 10px 30px rgba(0,0,0,.1);
+}
+
+.search-box input{
+flex:1;
+border:none;
+outline:none;
+padding:15px;
+font-size:16px;
+}
+
+.search-box button{
+background:#2563eb;
+border:none;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+font-size:22px;
+cursor:pointer;
+}
+
+.hero-buttons{
+margin-top:25px;
+display:flex;
+gap:15px;
+}
+
+.btn{
+padding:15px 30px;
+border:none;
+border-radius:50px;
+cursor:pointer;
+font-weight:600;
+font-size:16px;
+}
+
+.primary{
+background:#2563eb;
+color:white;
+}
+
+.secondary{
+background:white;
+color:#2563eb;
+}
+
+/* Hero Card */
+
+.hero-image{
+position:relative;
+}
+
+.support-card{
+width:400px;
+background:white;
+padding:30px;
+border-radius:30px;
+box-shadow:0 15px 40px rgba(0,0,0,0.12);
+animation:float 3s ease-in-out infinite;
+}
+
+.support-card h3{
+color:#2563eb;
+margin-bottom:15px;
+}
+
+.support-card p{
+color:#666;
+}
+
+.stat{
+margin-top:20px;
+padding:15px;
+background:#f4f8ff;
+border-radius:15px;
+}
+
+@keyframes float{
+0%,100%{
+transform:translateY(0);
+}
+50%{
+transform:translateY(-15px);
+}
+}
+
+/* Services */
+
+.services{
+padding:100px 8%;
+}
+
+.title{
+text-align:center;
+font-size:40px;
+margin-bottom:60px;
+color:#111827;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:25px;
+}
+
+.card{
+background:white;
+padding:30px;
+border-radius:25px;
+transition:.4s;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.icon{
+font-size:45px;
+margin-bottom:15px;
+}
+
+.card h3{
+margin-bottom:10px;
+}
+
+.card p{
+color:#666;
+}
+
+/* Live Support */
+
+.live-support{
+margin:80px 8%;
+background:linear-gradient(135deg,#2563eb,#1e40af);
+padding:50px;
+border-radius:30px;
+color:white;
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+}
+
+.live-support button{
+background:white;
+color:#2563eb;
+padding:15px 25px;
+border:none;
+border-radius:50px;
+font-weight:600;
+cursor:pointer;
+}
+
+/* Contact */
+
+.contact{
+padding:100px 8%;
+}
+
+form{
+max-width:700px;
+margin:auto;
+background:white;
+padding:40px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.1);
+}
+
+form input,
+form textarea{
+width:100%;
+padding:15px;
+margin:10px 0;
+border:1px solid #ddd;
+border-radius:12px;
+outline:none;
+}
+
+form button{
+width:100%;
+padding:15px;
+background:#2563eb;
+color:white;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+background:#0f172a;
+color:white;
+text-align:center;
+padding:40px;
+}
+
+/* Chat Widget */
+
+.chat-widget{
+position:fixed;
+bottom:25px;
+right:25px;
+width:65px;
+height:65px;
+background:#2563eb;
+color:white;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+cursor:pointer;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+0%{
+box-shadow:0 0 0 0 rgba(37,99,235,.7);
+}
+70%{
+box-shadow:0 0 0 20px rgba(37,99,235,0);
+}
+100%{
+box-shadow:0 0 0 0 rgba(37,99,235,0);
+}
+}
+
+@media(max-width:900px){
+
+.hero{
+flex-direction:column;
+text-align:center;
+}
+
+.hero h1{
+font-size:50px;
+}
+
+.support-card{
+margin-top:40px;
+width:100%;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<nav>
+<div class="logo">HelpNest</div>
+
+<ul>
+<li><a href="#">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#">FAQ</a></li>
+</ul>
+
+<button class="support-btn">Contact Support</button>
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+<div class="tag">💙 24/7 Customer Support</div>
+
+<h1>We Care.<br><span>We're Here To Help.</span></h1>
+
+<p>
+Get instant solutions, live support and professional assistance anytime.
+</p>
+
+<div class="search-box">
+<input type="text" placeholder="How can we help you today?">
+<button>🔍</button>
+</div>
+
+<div class="hero-buttons">
+<button class="btn primary">Chat With Us</button>
+<button class="btn secondary">Help Center</button>
+</div>
+</div>
+
+<div class="hero-image">
+<div class="support-card">
+<h3>Customer Satisfaction</h3>
+<h2>98%</h2>
+
+<div class="stat">
+⚡ Average Response Time: 2 Minutes
+</div>
+
+<div class="stat">
+🟢 Live Agents Available 24/7
+</div>
+</div>
+</div>
+
+</section>
+
+<section class="services" id="services">
+
+<h2 class="title">How Can We Help?</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="icon">👤</div>
+<h3>Account Support</h3>
+<p>Login issues, account recovery and profile management.</p>
+</div>
+
+<div class="card">
+<div class="icon">📦</div>
+<h3>Orders & Shipping</h3>
+<p>Track orders and shipping updates instantly.</p>
+</div>
+
+<div class="card">
+<div class="icon">💳</div>
+<h3>Payments</h3>
+<p>Billing, payment verification and refunds.</p>
+</div>
+
+<div class="card">
+<div class="icon">🛠️</div>
+<h3>Technical Support</h3>
+<p>Resolve technical problems with expert help.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="live-support">
+
+<div>
+<h2>Still Need Help?</h2>
+<p>Talk directly with our support team.</p>
+</div>
+
+<button onclick="openChat()">
+💬 Live Chat
+</button>
+
+</section>
+
+<section class="contact" id="contact">
+
+<h2 class="title">Contact Us</h2>
+
+<form>
+
+<input type="text" placeholder="Your Name">
+
+<input type="email" placeholder="Your Email">
+
+<textarea rows="6" placeholder="Describe your issue"></textarea>
+
+<button type="submit">
+Submit Request
+</button>
+
+</form>
+
+</section>
+
+<footer>
+© 2026 HelpNest Customer Care. All Rights Reserved.
+</footer>
+
+<div class="chat-widget" onclick="openChat()">
+💬
+</div>
+
+<script>
+
+function openChat(){
+alert("Live Chat Support Coming Soon!");
+}
+
+</script>
+
+</body>
+</html>
